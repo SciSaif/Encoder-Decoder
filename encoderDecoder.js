@@ -7,9 +7,9 @@ const container = document.querySelector('.container');
 const h4 = document.querySelector('h4');
 const encode = document.querySelector('.encode');
 const decode = document.querySelector('.decode');
-const pasteEn = document.querySelector('.paste-en');
+const clearEn = document.querySelector('.clear-en');
 const copyEn = document.querySelector('.copy-en');
-const pasteDe = document.querySelector('.paste-de');
+const clearDe = document.querySelector('.clear-de');
 const copyDe = document.querySelector('.copy-de');
 const encodeArea = document.querySelector('.encode-area');
 const decodeArea = document.querySelector('.decode-area');
@@ -1252,6 +1252,15 @@ function goback(){
     });
 }
 
+function onCopy(val){
+    var temp = val;
+    temp.select();
+    temp.focus();
+    document.execCommand("copy");
+};
+
+
+
 //cbinary
 function CBinary(){
     type.classList.add('invisible');
@@ -1279,6 +1288,17 @@ function CBinary(){
         
     })
     goback();
+    copyEn.addEventListener('click', ()=>{
+          onCopy(encodeArea);
+    });
+    copyDe.addEventListener('click', ()=>{
+          onCopy(decodeArea);
+    });
+ 
+    //clear text
+    clearEn.addEventListener('click', () => encodeArea.value = '');
+    clearDe.addEventListener('click', () => decodeArea.value = '');
+
 }
 
 //binary
@@ -1302,6 +1322,16 @@ function binary(){
         
     })
     goback();
+    copyEn.addEventListener('click', ()=>{
+        onCopy(encodeArea);
+    });
+    copyDe.addEventListener('click', ()=>{
+          onCopy(decodeArea);
+    });
+    
+    //clear text
+    clearEn.addEventListener('click', () => encodeArea.value = '');
+    clearDe.addEventListener('click', () => decodeArea.value = '');
 }
 
 //GibberText
@@ -1325,6 +1355,16 @@ function gibberText(){
         
     })
     goback();
+    copyEn.addEventListener('click', ()=>{
+        onCopy(encodeArea);
+    });
+    copyDe.addEventListener('click', ()=>{
+          onCopy(decodeArea);
+    });
+
+    //clear text
+    clearEn.addEventListener('click', () => encodeArea.value = '');
+    clearDe.addEventListener('click', () => decodeArea.value = '');
 }
 
 //Morse 
@@ -1348,6 +1388,16 @@ function morse(){
         
     })
     goback();
+    copyEn.addEventListener('click', ()=>{
+        onCopy(encodeArea);
+    });
+    copyDe.addEventListener('click', ()=>{
+          onCopy(decodeArea);
+    });
+
+    //clear text
+    clearEn.addEventListener('click', () => encodeArea.value = '');
+    clearDe.addEventListener('click', () => decodeArea.value = '');
 }
 
 //ASCII 
@@ -1371,4 +1421,14 @@ function ascii(){
         
     })
     goback();
+    copyEn.addEventListener('click', ()=>{
+        onCopy(encodeArea);
+    });
+    copyDe.addEventListener('click', ()=>{
+          onCopy(decodeArea);
+    });
+
+    //clear text
+    clearEn.addEventListener('click', () => encodeArea.value = '');
+    clearDe.addEventListener('click', () => decodeArea.value = '');
 }
