@@ -240,19 +240,22 @@ h4 {
 
 ::-webkit-input-placeholder { /* Edge */
     color: rgba(255, 0, 0, 0.568);
-    font-size: 80px;
+    font-size: 20vw;
+    font-size: 8vh;
     text-align: center;
   }
   
   :-ms-input-placeholder { /* Internet Explorer 10-11 */
     color: rgba(255, 0, 0, 0.555);
-    font-size: 80px;
+    font-size: 20vw;
+    font-size: 8vh;
     text-align: center;
   }
   
   ::placeholder {
     color: rgba(34, 129, 158, 0.527);
-    font-size: 80px;
+    font-size: 20vw;
+    font-size: 8vh;
     text-align: center;
   }
 
