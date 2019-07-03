@@ -1,0 +1,176 @@
+*{margin: 0;padding: 0;box-sizing: border-box;}
+body {
+    height: 100vh;
+    background: rgb(20, 20, 20);
+    background: url("code2.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+/* Start page */
+.start, .type {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.795);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s ease;
+}
+
+.lets-go {
+    color:white;
+    font-size: 29px;
+    padding: 7px 20px;
+    border: 1px solid rgb(150, 6, 6);
+    background: rgba(109, 108, 108, 0.288);
+    font-family: 'Cinzel', serif;
+    outline: none;
+    cursor: pointer;
+
+
+}
+.lets-go:hover {
+    background: rgba(59, 1, 1, 0.466);
+    outline: none;
+
+}
+.lets-go:active {
+    background: rgba(104, 12, 12, 0.466);
+    transform: translate(2px, 2px);
+
+}
+/* ------------- */
+
+
+
+.type p {
+    color: white;
+    position: absolute;
+    top: 25%;
+    font-family: 'Allerta Stencil', sans-serif;
+    text-align: center;
+    font-size: 28px;
+
+}
+
+/* select box style ----------------------------------------*/
+ /* The container must be positioned relative: */
+ .custom-select {
+    position: relative;
+    font-family: Arial;
+  }
+  
+  .custom-select select {
+    display: none; /*hide original SELECT element: */
+  }
+  
+  .select-selected {
+    background-color: rgba(34, 34, 34, 0.582);
+  }
+  
+  /* Style the arrow inside the select element: */
+  .select-selected:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #fff transparent transparent transparent;
+  }
+  
+  /* Point the arrow upwards when the select box is open (active): */
+  .select-selected.select-arrow-active:after {
+    border-color: transparent transparent #fff transparent;
+    top: 7px;
+    
+  }
+  
+  /* style the items (options), including the selected item: */
+  .select-items div,.select-selected {
+    color: #ffffff;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+    border: 1px solid rgba(17, 170, 30, 0.712);
+
+  }
+  
+  /* Style items (options): */
+  .select-items {
+    position: absolute;
+    background-color: rgba(7, 28, 49, 0.63);
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+  }
+  
+  /* Hide the items when the select box is closed: */
+  .select-hide {
+    display: none;
+  }
+  
+  .select-items div:hover, .same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+  } 
+
+/* ------------------------------------------------------------- */
+
+.type-btn {
+    margin-top: 10px;
+    position: absolute;
+    top: 60%;
+    right: 50%;
+    font-family: 'Allerta Stencil', sans-serif;
+    font-size: 20px;
+    padding: 7px 25px;
+    transform: translateX(50%);
+    background: rgba(0, 0, 0, 0.377);
+    color: white;
+    border: 1px solid rgb(3, 82, 3);
+    outline: none;
+    cursor: pointer;
+
+}
+.type-btn:hover {
+    background: rgba(12, 70, 25, 0.377);
+}
+.type-btn:active {
+    background: rgba(34, 100, 48, 0.377);
+    
+}
+/* ------------------------------------------------------------------------ */
+/* saif */
+.saif {
+    position: absolute;
+    bottom: 5%;
+    color: white;
+}
+.saif-in {
+    color: rgba(17, 170, 30, 0.712);
+    font-family: 'Allerta Stencil', sans-serif;
+}
+/* ------------------------------------------------------------------ */
+
+.container {
+    background: rgba(65, 63, 63, 0.5);
+    width: 90vw;
+    height: 90vh;
+    
+}
+
+/* invisibility */
+.invisible {
+    display: none;
+    pointer-events: none;
+}
