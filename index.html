@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Message Encoder/Decoder</title>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="encoderDecoder.css">
     <link href="https://fonts.googleapis.com/css?family=Allerta+Stencil|Cinzel|Orbitron|Russo+One&display=swap" rel="stylesheet"> 
-    <title>Secret Message Encoder/Decoder</title>
 </head>
 <body>
-    <div class="start invisible">
+    <div class="start">
         <button class="lets-go">Lets Go</button>
     </div>
     <div class="type invisible">
@@ -29,21 +29,21 @@
             Created By: <i class="saif-in">Saif</i>
         </div>
     </div>
-    <div class="container">
+    <div class="container invisible">
           <h4>Custom Binary Encoder/Decoder</h4>
           <div class="code-btns">
-            <button class="first btns">ENCODE</button>
+            <button class="first btns encode">ENCODE</button>
             <button class="paste btns paste-en">Paste</button>
             <button class="copy btns copy-en">Copy</button>
           </div>
-          <textarea name="encode" class="area" ></textarea>
+          <textarea name="encode" class="area encode-area" spellcheck="false"></textarea>
           
           <div class="code-btns">
-            <button class="first btns">ENCODE</button>
+            <button class="first btns decode">DECODE</button>
             <button class="paste btns paste-de">Paste</button>
-            <button class="copy btns encode-de">Copy</button>
+            <button class="copy btns copy-de">Copy</button>
           </div>
-          <textarea name="encode" class="area" ></textarea>
+          <textarea name="encode" class="area decode-area" spellcheck="false"></textarea>
           <button class="go-back btns">Go back</button>
     </div>
 

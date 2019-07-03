@@ -225,6 +225,7 @@ h4 {
     font-family: 'Cinzel', serif;
     outline: none;
     overflow-y: auto;
+    text-decoration: none;
 }
 .go-back {
     width: 95%;

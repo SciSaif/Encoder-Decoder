@@ -1,3 +1,22 @@
+const letsGo = document.querySelector('.lets-go');
+const start = document.querySelector('.start');
+const type = document.querySelector('.type');
+const select = document.querySelector('select');
+const typeBtn = document.querySelector('.type-btn');
+const container = document.querySelector('.container');
+const h4 = document.querySelector('h4');
+const encode = document.querySelector('.encode');
+const decode = document.querySelector('.decode');
+const pasteEn = document.querySelector('.paste-en');
+const copyEn = document.querySelector('.copy-en');
+const pasteDe = document.querySelector('.paste-de');
+const copyDe = document.querySelector('.copy-de');
+const encodeArea = document.querySelector('.encode-area');
+const decodeArea = document.querySelector('.decode-area');
+const goBack = document.querySelector('.go-back');
+
+
+
 //---custom binary code---
 
 function encodeCBinary(str){
@@ -993,7 +1012,6 @@ function encodeGibberText(str) {
         }
         encoded += temp;
     });
-    console.log(encoded);
     
     return encoded;
 }
@@ -1007,7 +1025,6 @@ function decodeGibberText(str) {
     var text = Array.from(str.trim().split(" "));
     
     text.forEach(elem => {
-        console.log(elem);
         
         switch(elem){
             case "bhs":
@@ -1192,9 +1209,166 @@ function decodeGibberText(str) {
         decoded += temp;
     });
 
-    console.log(decoded);
-    
+    return decoded;
 }
 
-encodeGibberText("hello there");
-decodeGibberText("nhesmondtndttwpbgtlmrnhesmoqarsmo");
+
+//--------------------------------------------------------------
+
+//if clicked on lets go
+letsGo.addEventListener('click', next);
+function next() {
+    start.classList.add('invisible');
+    type.classList.remove('invisible');
+}
+
+//if clicked on go 
+typeBtn.addEventListener('click', typeNext);
+function typeNext() {
+    const choice = select.value;
+    console.log(choice);
+    
+    if (choice == 1) {
+        CBinary();
+    }else if (choice == 2) {
+        binary();
+    }else if (choice == 3) {
+        gibberText();
+    }else if (choice == 4) {
+        morse();
+    }else if (choice == 5) {
+        ascii();
+    }
+    
+}
+//if clicked on go back
+function goback(){
+    goBack.addEventListener('click', () => {
+        container.classList.add('invisible');
+        type.classList.remove('invisible');
+        
+        encodeArea.value = '';
+        decodeArea.value = '';
+    });
+}
+
+//cbinary
+function CBinary(){
+    type.classList.add('invisible');
+    container.classList.remove('invisible');
+
+    h4.innerHTML = "Custom Binary Encoder/Decoder";
+    //paste btn
+
+    encode.addEventListener('click', () => {
+        var text = encodeArea.value;
+        // console.log(text);
+        var encodedText = encodeCBinary(text);
+        // console.log(encodedText);
+
+        decodeArea.value = encodedText;
+        
+    })
+    decode.addEventListener('click', () => {
+        var text = decodeArea.value;
+        // console.log(text);
+        var decodedText = decodeCBinary(text);
+        // console.log(encodedText);
+
+        encodeArea.value = decodedText;
+        
+    })
+    goback();
+}
+
+//binary
+function binary(){
+    type.classList.add('invisible');
+    container.classList.remove('invisible');
+
+    h4.innerHTML = "Binary Encoder/Decoder";
+
+    encode.addEventListener('click', () => {
+        var text = encodeArea.value;
+        var encodedText = encodeBinary(text);
+
+        decodeArea.value = encodedText;
+    })
+    decode.addEventListener('click', () => {
+        var text = decodeArea.value;
+        var decodedText = decodeBinary(text);
+
+        encodeArea.value = decodedText;
+        
+    })
+    goback();
+}
+
+//GibberText
+function gibberText(){
+    type.classList.add('invisible');
+    container.classList.remove('invisible');
+
+    h4.innerHTML = "GibberText Encoder/Decoder";
+
+    encode.addEventListener('click', () => {
+        var text = encodeArea.value;
+        var encodedText = encodeGibberText(text);
+
+        decodeArea.value = encodedText;
+    })
+    decode.addEventListener('click', () => {
+        var text = decodeArea.value;
+        var decodedText = decodeGibberText(text);
+
+        encodeArea.value = decodedText;
+        
+    })
+    goback();
+}
+
+//Morse 
+function morse(){
+    type.classList.add('invisible');
+    container.classList.remove('invisible');
+
+    h4.innerHTML = "Morse Encoder/Decoder";
+
+    encode.addEventListener('click', () => {
+        var text = encodeArea.value;
+        var encodedText = encodeMorse(text);
+
+        decodeArea.value = encodedText;
+    })
+    decode.addEventListener('click', () => {
+        var text = decodeArea.value;
+        var decodedText = decodeMorse(text);
+
+        encodeArea.value = decodedText;
+        
+    })
+    goback();
+}
+
+//ASCII 
+function ascii(){
+    type.classList.add('invisible');
+    container.classList.remove('invisible');
+
+    h4.innerHTML = "ASCII Encoder/Decoder";
+
+    encode.addEventListener('click', () => {
+        var text = encodeArea.value;
+        var encodedText = encodeAscii(text);
+
+        decodeArea.value = encodedText;
+    })
+    decode.addEventListener('click', () => {
+        var text = decodeArea.value;
+        var decodedText = decodeAscii(text);
+
+        encodeArea.value = decodedText;
+        
+    })
+    goback();
+}
