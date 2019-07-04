@@ -14,6 +14,8 @@ const copyDe = document.querySelector('.copy-de');
 const encodeArea = document.querySelector('.encode-area');
 const decodeArea = document.querySelector('.decode-area');
 const goBack = document.querySelector('.go-back');
+const audio1 = document.querySelector('#a1');
+const audio2 = document.querySelector('#a2');
 
 
 
@@ -1218,13 +1220,23 @@ function decodeGibberText(str) {
 //if clicked on lets go
 letsGo.addEventListener('click', next);
 function next() {
+    
+    start.classList.add('closed');
     start.classList.add('invisible');
     type.classList.remove('invisible');
+
+    audio1.currentTime = 0;
+    audio1.play();
+
+
 }
 
 //if clicked on go 
 typeBtn.addEventListener('click', typeNext);
 function typeNext() {
+    audio1.currentTime = 0;
+    audio1.play();
+
     const choice = select.value;
     console.log(choice);
     
@@ -1249,6 +1261,8 @@ function goback(){
         
         encodeArea.value = '';
         decodeArea.value = '';
+        audio2.currentTime = 0;
+        audio2.play();
     });
 }
 

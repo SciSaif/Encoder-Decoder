@@ -29,8 +29,15 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all 1s ease;
+    overflow-y: hidden;
+	  max-height: 702px; /* approximate max height */
+  
+	  transition-property: all;
+	  transition-duration: 1s;
+	  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
 }
+
+
 
 .lets-go {
     color:white;
@@ -44,6 +51,7 @@ a {
 
 
 }
+
 .lets-go:hover {
     background: rgba(59, 1, 1, 0.466);
     outline: none;
@@ -54,6 +62,11 @@ a {
     transform: translate(2px, 2px);
 
 }
+.lets-go:active + .start  {
+  max-height: 0;
+  transform: rotate(30deg);
+}
+
 /* ------------- */
 
 
